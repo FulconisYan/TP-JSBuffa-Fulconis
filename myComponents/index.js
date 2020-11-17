@@ -19,7 +19,6 @@ templateAudio.innerHTML = `
         padding-left: 20px;
     }
     #audioPart {
-        margin-bottom: 20px;
         border:solid;
         display: inline-block;
         padding-right: 20px;
@@ -27,19 +26,23 @@ templateAudio.innerHTML = `
     #soundEffect {
         border:solid;
         display: inline-block;
+        padding-right: 200px;
     }
     #equalizer {
+        margin-top: 20px;
         padding-right: 20px;
-        
+        padding-left: 20px;
     }
     #waveform{
-    
+        padding-left: 180px;
+        padding-bottom: 10px;
+        padding-top: 20px;
     }
     #myCanvas {
         border:1px solid;
         margin = 10px;
     }
-    #balanceGaucheDroite {
+    #vizualizerFrequence {
         margin-bottom: 40px;
         padding-left:25px;
 
@@ -53,7 +56,23 @@ templateAudio.innerHTML = `
     #volume-slider2 {
         margin-right: 20px;
     }
+    #saxophoneImg{
+        padding-top: 20px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+    #flexBox{
+        display:flex;
+    }
+    #structureCSS{
+        display:flex;
+    }
+    #knob-volume{
+        padding-bottom: 50px;
+    }
   </style>
+  
+<div id="structureCSS">
 <div id="audioPart">
 <h1 id="audioTitle"> Partie Audio </h1>
   <audio id="myPlayer" controls crossorigin="anonymous">
@@ -78,46 +97,52 @@ templateAudio.innerHTML = `
       
 </div> 
 <div id="soundEffect">
-    <div id="equalizer"> 
-        <div class="controls">
-            <label>60Hz</label>
-            <webaudio-slider id="range1" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
-            <output id="gain0">0 dB</output>
-      </div>
-      <div class="controls">
-      </div>
-      <div class="controls">
-            <label>170Hz</label>
-            <webaudio-slider id="range2" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
-            <output id="gain1">0 dB</output>
-      </div>
-      <div class="controls">
-            <label>350Hz</label>
-            <webaudio-slider id="range3" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
-            <output id="gain2">0 dB</output>
-      </div>
-      <div class="controls">
-        <label>1000Hz</label>
-        <webaudio-slider id="range4" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
-        <output id="gain3">0 dB</output>
-      </div>
-      <div class="controls">
-        <label>3500Hz</label>
-        <webaudio-slider id="range5" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
-        <output id="gain4">0 dB</output>
-      </div>
-      <div class="controls">
-        <label>10000Hz</label>
-        <webaudio-slider id="range6" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
-        <output id="gain5">0 dB</output>
-      </div>
-    </div> 
+    <div id="flexBox">
+        <div id="equalizer"> 
+            <div class="controls">
+                <label>60Hz</label>
+                <webaudio-slider id="range1" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
+                <output id="gain0">0 dB</output>
+          </div>
+          <div class="controls">
+          </div>
+          <div class="controls">
+                <label>170Hz</label>
+                <webaudio-slider id="range2" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
+                <output id="gain1">0 dB</output>
+          </div>
+          <div class="controls">
+                <label>350Hz</label>
+                <webaudio-slider id="range3" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
+                <output id="gain2">0 dB</output>
+          </div>
+          <div class="controls">
+            <label>1000Hz</label>
+            <webaudio-slider id="range4" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
+            <output id="gain3">0 dB</output>
+          </div>
+          <div class="controls">
+            <label>3500Hz</label>
+            <webaudio-slider id="range5" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
+            <output id="gain4">0 dB</output>
+          </div>
+          <div class="controls">
+            <label>10000Hz</label>
+            <webaudio-slider id="range6" height="20" width="100" src="../assets/knobs/hsliderbody.png" knobsrc="./myComponents/assets/knobs/hsliderknob.png" type="range" value="0" step="1" min="-30" max="30"></webaudio-slider>
+            <output id="gain5">0 dB</output>
+          </div>
+        </div> 
+    <div id="saxophoneImg">
+        <img width="100" src="../assets/img/saxophone.png"/>
+    </div>
+    </div>
     <br/>
     <div id="waveform">
         <canvas id="MyCanvas" width="300" height="100"></canvas>
-    </div>
+    </div> 
 </div>
-<div id ="balanceGaucheDroite">
+</div>
+<div id ="vizualizerFrequence">
     <h2> Visualizer de fréquences </h2>
     <p>Wow, la classe !</p>
     <canvas id="CanvasFrequences" width="300" height="100"></canvas>
